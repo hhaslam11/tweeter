@@ -1,0 +1,11 @@
+header {
+  background-color: rgba(44, 88, 238, 0.66);
+  background-image: url('/images/profile-bg.png');
+  color: #FFF;
+  
+  height: 400px;
+  width: 100%;
+  
+  text-align: center;
+  
+}
