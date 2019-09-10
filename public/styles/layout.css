@@ -24,6 +24,46 @@ body {
 .container {
   width: 90%;
   margin-left: 5%;
-  border: solid 2px;
+  text-align: center;
+}
+
+.new-tweet {
+  color: #56524b;
+}
+
+.new-tweet textarea {
+  background-color: transparent;
+  color: #56524b;
+  border: none;
+  border-bottom: 4px solid #56524b;
+  margin-bottom: 20px;
+  resize: none;
+  height: 1.5em;
+  width: 100%;
+  font-weight: 700;
+}
+
+.new-tweet .btn {
+  background-color: #6371a8;
+  color: #FFF;
+  border: none;
+  width: 110px;
+  height: 40px;
+}
+
+.new-tweet .btn:hover {
+  background-color: #616da0;
+}
+
+.new-tweet .counter {
+  font-family: 'Bungee', sans-serif;
+}
+
+.align-left {
+  float: left;
+}
+
+.align-right {
+  float: right;
 }
 
