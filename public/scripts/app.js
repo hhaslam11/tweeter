@@ -7,6 +7,8 @@ const getDaysSince = timestamp => {
 /* eslint-disable no-undef */
 const createNewTweet = data => {
   const tweet = $("<article>").addClass("tweet");
+
+  //TODO don't use template literal, its a security flaw
   $(tweet).append(`
     <header>
       <span class="icon">
@@ -29,9 +31,19 @@ const createNewTweet = data => {
 };
 
 const renderTweets = arr => {
-  arr.forEach(element => {
+  $('#tweets-container article').remove();
+  arr.reverse().forEach(element => {
     $('#tweets-container').append(createNewTweet(element));
   });
+};
+
+const loadTweets = () => {
+  $.ajax('/tweets', {
+    method: 'GET'
+  })
+    .then(response => {
+      renderTweets(response);
+    });
 };
 
 $('#sendTweet').on('submit', function(event) {
@@ -41,35 +53,8 @@ $('#sendTweet').on('submit', function(event) {
     data: $(this).serialize()
   })
     .then((response) => {
-      console.log('Request have been sent');
+      loadTweets();
     });
 });
-// });
 
-//Driver code underneath here ========================== :) TODO delete this at some point
-const data = [
-  {
-    "user": {
-      "name": "Newton",
-      "avatars": "https://i.imgur.com/73hZDYK.png"
-      ,
-      "handle": "@SirIsaac"
-    },
-    "content": {
-      "text": "If I have seen further it is by standing on the shoulders of giants"
-    },
-    "created_at": 1461116232227
-  },
-  {
-    "user": {
-      "name": "Descartes",
-      "avatars": "https://i.imgur.com/nlhLi3I.png",
-      "handle": "@rd" },
-    "content": {
-      "text": "Je pense , donc je suis"
-    },
-    "created_at": 1461113959088
-  }
-];
-
-renderTweets(data);
+loadTweets();
