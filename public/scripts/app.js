@@ -66,6 +66,7 @@ $('#sendTweet').on('submit', function(event) {
     data: $(this).serialize()
   })
     .then((response) => {
+      $('.new-tweet textarea').val('');
       loadTweets();
     });
 });
