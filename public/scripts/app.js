@@ -10,7 +10,7 @@ const createNewTweet = data => {
   $(tweet).append(`
     <header>
       <span class="icon">
-        <img src="${data.user.avatars}">
+        <img class="align-left" src="${data.user.avatars}">
       </span>
 
       <span class="name">${data.user.name}</span>
@@ -34,8 +34,6 @@ const renderTweets = arr => {
   });
 };
 
-
-// $(function() {
 $('#sendTweet').on('submit', function(event) {
   event.preventDefault();
   $.ajax('/tweets', {
@@ -48,7 +46,7 @@ $('#sendTweet').on('submit', function(event) {
 });
 // });
 
-//Driver code underneath here ========================== :)
+//Driver code underneath here ========================== :) TODO delete this at some point
 const data = [
   {
     "user": {
