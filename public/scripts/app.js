@@ -6,27 +6,20 @@ const getDaysSince = timestamp => {
 
 /* eslint-disable no-undef */
 const createNewTweet = data => {
-  const tweet = $("<article>").addClass("tweet");
+  const tweet = $('<article>').addClass('tweet');
 
-  //TODO don't use template literal, its a security flaw
-  $(tweet).append(`
-    <header>
-      <span class="icon">
-        <img class="align-left" src="${data.user.avatars}">
-      </span>
+  //build header=
+  const icon   = $('<span>').addClass('icon').html(`<img class="align-left" src="${data.user.avatars}">`);
+  const name   = $('<span>').addClass('name').text(data.user.name);
+  const handle = $('<span>').addClass('handle').text(data.user.handle);
+  const header = $('<header>').append([icon, name, handle]);
 
-      <span class="name">${data.user.name}</span>
+  const content = $('<p>').text(data.content.text);
+  const hr = $('<hr>');
 
-      <span class="handle">
-        ${data.user.handle}
-      </span>
-    </header>
-    <p>${data.content.text}</p>
-    <hr>
-    <footer>
-      ${getDaysSince(data.created_at)} days ago
-    </footer>
-  `);
+  const footer = $('<footer>').text(getDaysSince(data.created_at) + ' days ago');
+
+  tweet.append([header, content, hr, footer]);
   return tweet;
 };
 
