@@ -48,6 +48,19 @@ const loadTweets = () => {
 
 $('#sendTweet').on('submit', function(event) {
   event.preventDefault();
+
+  const inputValue = $('.new-tweet textarea').val();
+
+  if (inputValue.length > 140) {
+    alert('Tweet is too long! Max 140 characters.');
+    return;
+  }
+
+  if (inputValue.length === 0) {
+    alert('Tweet is empty!');
+    return;
+  }
+
   $.ajax('/tweets', {
     method: 'POST',
     data: $(this).serialize()
