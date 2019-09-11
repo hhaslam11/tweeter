@@ -34,6 +34,20 @@ const renderTweets = arr => {
   });
 };
 
+
+// $(function() {
+$('#sendTweet').on('submit', function(event) {
+  event.preventDefault();
+  $.ajax('/tweets', {
+    method: 'POST',
+    data: $(this).serialize()
+  })
+    .then((response) => {
+      console.log('Request have been sent');
+    });
+});
+// });
+
 //Driver code underneath here ========================== :)
 const data = [
   {
