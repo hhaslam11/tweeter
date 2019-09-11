@@ -7,6 +7,8 @@
   
   border: solid 4px #56524b;
   text-align: left;
+
+  transition: box-shadow 0.3s;
 }
 
 .tweet:hover {
