@@ -71,4 +71,8 @@ $('#sendTweet').on('submit', function(event) {
     });
 });
 
+$('.scroll-to-top').on('click', () => {
+  $("html").animate({ scrollTop: 0 }, "slow");
+});
+
 loadTweets();
