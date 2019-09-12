@@ -20,6 +20,10 @@ body {
 
   font-size: 24px;
   font-family: 'Source Sans Pro', sans-serif;
+
+  /* This makes it so the navbar doesnt overlap elements
+     when scrolled all the way up */
+  padding-top: 100px;
 }
 
 .tweets-container {
