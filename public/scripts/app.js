@@ -8,7 +8,7 @@ const getDaysSince = timestamp => {
 const createNewTweet = data => {
   const tweet = $('<article>').addClass('tweet');
 
-  //build header=
+  //build header
   const icon   = $('<span>').addClass('icon').html(`<img class="align-left" src="${data.user.avatars}">`);
   const name   = $('<span>').addClass('name').text(data.user.name);
   const handle = $('<span>').addClass('handle').text(data.user.handle);
@@ -77,9 +77,9 @@ $('.scroll-to-top').on('click', () => {
 
 $(document).on('scroll', function() {
   if ($(this).scrollTop() >= 1000) {
-    $('.scroll-to-top').css({'display': 'block'});
+    $('.scroll-to-top').fadeIn(300);
   } else {
-    $('.scroll-to-top').css({'display': 'none'});
+    $('.scroll-to-top').fadeOut(300);
   }
 });
 
