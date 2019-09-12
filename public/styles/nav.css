@@ -15,6 +15,15 @@ nav .title {
   font-family: 'Bungee', sans-serif;
 }
 
+.new-tweet-btn {
+  float: right;
+  transition: color 0.2s;
+}
+
+.new-tweet-btn:hover {
+  color: #c0ccf5;
+}
+
 .arrow {
   margin-left: 43%;
   position: relative;
@@ -22,6 +31,7 @@ nav .title {
   animation-duration: 1.3s;
   animation-iteration-count: infinite;
 }
+
 
 @keyframes move-arrow {
   0% {bottom: 0px}

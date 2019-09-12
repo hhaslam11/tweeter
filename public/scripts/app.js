@@ -39,6 +39,11 @@ const loadTweets = () => {
     });
 };
 
+$('.new-tweet-btn').on('click', () => {
+  $('.new-tweet').slideToggle(300);
+  $('textarea').focus();
+});
+
 $('#sendTweet').on('submit', function(event) {
   event.preventDefault();
 

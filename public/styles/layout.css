@@ -30,6 +30,7 @@ body {
 
 .new-tweet {
   color: #56524b;
+  display: none;
 }
 
 .new-tweet textarea {
