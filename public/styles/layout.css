@@ -23,14 +23,25 @@ body {
 }
 
 .tweets-container {
-  width: 90%;
-  margin-left: 5%;
+  width: 100%;
   text-align: center;
+  
+  
+}
+
+@media only screen and (min-width: 1100px) {
+  .tweets-container {
+    width: 50%;
+    float: right;
+    display: inline;
+  }
 }
 
 .new-tweet {
   color: #56524b;
   display: none;
+  width: 90%;
+  margin-left: 5%;
 }
 
 .new-tweet textarea {

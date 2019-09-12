@@ -6,8 +6,22 @@
 
   /* Sizing */
   height: 400px;
-  width: 100%;
   padding: 15px;
-  
   text-align: center;
 }
+
+@media only screen and (min-width: 1100px) {
+  .profile {
+    display: inline-block;
+    box-shadow: 2px 2px 4px grey;
+    margin-top: 10vh;
+    margin-left: -15px;
+    width: 50%;
+    transition: margin-left 1s;
+  }
+  
+  .profile:hover {
+    margin-left: 0;
+  }
+}
+
