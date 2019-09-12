@@ -60,13 +60,13 @@ $('#sendTweet').on('submit', function(event) {
     $('#error-no-text').css({'display': 'inline'});
     return;
   }
-
-  $('.new-tweet textarea').val('');
+  
   $.ajax('/tweets', {
     method: 'POST',
     data: $(this).serialize()
   })
     .then((response) => {
+      $('.new-tweet textarea').val('');
       loadTweets();
     });
 });
