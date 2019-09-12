@@ -76,3 +76,14 @@ body {
   float: right;
 }
 
+.error {
+  color: #f53d3d;
+  font-size: 30px;
+  font-weight: bold;
+
+  height: 40px;
+  margin-left: 10px;
+  
+  display: none;
+}
+

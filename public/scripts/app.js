@@ -48,14 +48,16 @@ $('#sendTweet').on('submit', function(event) {
   event.preventDefault();
 
   const inputValue = $('.new-tweet textarea').val();
+  $('#error-no-text').css({'display': 'none'});
+  $('#error-char-limit').css({'display': 'none'});
 
   if (inputValue.length > 140) {
-    alert('Tweet is too long! Max 140 characters.');
+    $('#error-char-limit').css({'display': 'inline'});
     return;
   }
 
   if (inputValue.length === 0) {
-    alert('Tweet is empty!');
+    $('#error-no-text').css({'display': 'inline'});
     return;
   }
 
