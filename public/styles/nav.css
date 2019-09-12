@@ -11,6 +11,20 @@ nav {
   top: 0;
 }
 
-nav span {
+nav .title {
   font-family: 'Bungee', sans-serif;
+}
+
+.arrow {
+  margin-left: 43%;
+  position: relative;
+  animation-name: move-arrow;
+  animation-duration: 1.3s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes move-arrow {
+  0% {bottom: 0px}
+  50% {bottom: 5px}
+  100% {bottom: 0px}
 }
