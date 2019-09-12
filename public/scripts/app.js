@@ -75,4 +75,12 @@ $('.scroll-to-top').on('click', () => {
   $("html").animate({ scrollTop: 0 }, "slow");
 });
 
+$(document).on('scroll', function() {
+  if ($(this).scrollTop() >= 1000) {
+    $('.scroll-to-top').css({'display': 'block'});
+  } else {
+    $('.scroll-to-top').css({'display': 'none'});
+  }
+});
+
 loadTweets();
