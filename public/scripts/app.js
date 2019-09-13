@@ -1,5 +1,8 @@
-// const updateCounter = require('./composer-char-counter');
 
+/**
+ * @param {number} timestamp timestamp (in miliseconds)
+ * @returns The amount of days (rounded down) since the given timestamp
+ */
 const getDaysSince = timestamp => {
   const currentDate = new Date();
   const daysSinceTimestamp = currentDate.getTime() - Number(timestamp);
@@ -7,6 +10,11 @@ const getDaysSince = timestamp => {
 };
 
 /* eslint-disable no-undef */
+
+/**
+ * Creates new DOM object for displaying a tweet with the given information
+ * @param {object} data tweet object that has information (should be sent from server)
+ */
 const createNewTweet = data => {
   const tweet = $('<article>').addClass('tweet');
 
@@ -31,6 +39,10 @@ const createNewTweet = data => {
   return tweet;
 };
 
+/**
+ * Renders tweets to the page in reverse-chronological order
+ * @param {array} arr array of tweets to render
+ */
 const renderTweets = arr => {
   $('#tweets-container article').remove();
   arr.reverse().forEach(element => {
@@ -38,6 +50,9 @@ const renderTweets = arr => {
   });
 };
 
+/**
+ * Sends get request to server to grab tweets, then sends it to the renderTweets() function
+ */
 const loadTweets = () => {
   $.ajax('/tweets', {
     method: 'GET'
@@ -47,11 +62,17 @@ const loadTweets = () => {
     });
 };
 
+/**
+ * Button in header that toggles the new-tweet section
+ */
 $('.new-tweet-btn').on('click', () => {
   $('.new-tweet').slideToggle(300);
   $('textarea').focus();
 });
 
+/**
+ * Validates user input, and sends tweet to server if all looks good
+ */
 $('#sendTweet').on('submit', function(event) {
   event.preventDefault();
 
@@ -84,6 +105,9 @@ $('.scroll-to-top').on('click', () => {
   $("html").animate({ scrollTop: 0 }, "slow");
 });
 
+/**
+ * check if page is scrolled past a certain point and displays scroll-to-top button
+ */
 $(document).on('scroll', function() {
   if ($(this).scrollTop() >= 1000) {
     $('.scroll-to-top').fadeIn(300);
