@@ -1,5 +1,12 @@
 /* eslint-disable no-undef */
 
+
+const updateCounter = () => {
+  const length = $('.new-tweet textarea').val().length;
+  const charsLeft = 140 - length;
+  $('.counter').text(charsLeft);
+};
+
 $('.new-tweet textarea').on('input', function() {
   const length = $(this).val().length;
   const charsLeft = 140 - length;

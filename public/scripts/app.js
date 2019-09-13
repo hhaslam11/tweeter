@@ -1,3 +1,5 @@
+// const updateCounter = require('./composer-char-counter');
+
 const getDaysSince = timestamp => {
   const currentDate = new Date();
   const daysSinceTimestamp = currentDate.getTime() - Number(timestamp);
@@ -73,6 +75,7 @@ $('#sendTweet').on('submit', function(event) {
   })
     .then((response) => {
       $('.new-tweet textarea').val('');
+      updateCounter();
       loadTweets();
     });
 });
@@ -89,4 +92,5 @@ $(document).on('scroll', function() {
   }
 });
 
+updateCounter();
 loadTweets();
