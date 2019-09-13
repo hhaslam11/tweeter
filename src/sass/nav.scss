@@ -1,34 +1,40 @@
 nav {
   background-color: #4056A1;
   color: #FFF;
+
   position: fixed;
   height: 100px;
   width: 100%;
   z-index: 10;
+
   padding: 1.5em;
-  top: 0; }
+  top: 0;
+}
 
 nav .title {
-  font-family: 'Bungee', sans-serif; }
+  font-family: 'Bungee', sans-serif;
+}
 
 .new-tweet-btn {
   float: right;
-  transition: color 0.2s; }
+  transition: color 0.2s;
+}
 
 .new-tweet-btn:hover {
-  color: #c0ccf5; }
+  color: #c0ccf5;
+}
 
 .arrow {
   margin-left: 43%;
   position: relative;
   animation-name: move-arrow;
   animation-duration: 1.3s;
-  animation-iteration-count: infinite; }
+  animation-iteration-count: infinite;
+}
+
 
 @keyframes move-arrow {
-  0% {
-    bottom: 0px; }
-  50% {
-    bottom: 5px; }
-  100% {
-    bottom: 0px; } }
+  0% {bottom: 0px}
+  50% {bottom: 5px}
+  100% {bottom: 0px}
+}

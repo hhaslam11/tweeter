@@ -19,6 +19,7 @@
     "npm": "^6.11.3"
   },
   "devDependencies": {
+    "gulp-sass": "^4.0.2",
     "nodemon": "^1.9.2"
   }
 }
