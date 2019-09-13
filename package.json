@@ -5,8 +5,8 @@
   "main": "server/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server/index.js",
-    "local": "./node_modules/.bin/nodemon --watch server -e js server/index.js"
+    "start": "gulp server",
+    "local": "gulp local"
   },
   "author": "Lighthouse Labs",
   "license": "ISC",
@@ -14,12 +14,11 @@
     "body-parser": "^1.15.2",
     "chance": "^1.0.2",
     "express": "^4.13.4",
-    "gulp": "^4.0.2",
-    "md5": "^2.1.0",
-    "npm": "^6.11.3"
+    "md5": "^2.1.0"
   },
   "devDependencies": {
-    "gulp-sass": "^4.0.2",
-    "nodemon": "^1.9.2"
+    "gulp": "^4.0.2",
+    "gulp-nodemon": "^2.4.2",
+    "gulp-sass": "^4.0.2"
   }
 }
