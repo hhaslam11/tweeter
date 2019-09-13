@@ -17,7 +17,13 @@ const createNewTweet = data => {
   const content = $('<p>').text(data.content.text);
   const hr = $('<hr>');
 
-  const footer = $('<footer>').text(getDaysSince(data.created_at) + ' days ago');
+  const buttons = $('<span>').html(`
+    <i class="fas fa-retweet"></i>
+    <i class="fas fa-heart"></i>
+    <i class="fas fa-flag"></i>
+  `);
+  buttons.addClass('align-right');
+  const footer = $('<footer>').text(getDaysSince(data.created_at) + ' days ago').append(buttons);
 
   tweet.append([header, content, hr, footer]);
   return tweet;

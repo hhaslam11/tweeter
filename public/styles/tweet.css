@@ -29,6 +29,7 @@
 
 .tweet p {
   padding-top: 80px;
+  word-break: break-all;
 }
 
 .tweet footer {
