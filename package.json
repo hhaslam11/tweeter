@@ -5,8 +5,10 @@
   "main": "server/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "gulp server",
-    "local": "gulp local"
+    "start": "node server/index.js",
+    "local": "./node_modules/.bin/nodemon -L --watch server -e js server/index.js",
+    "sass": "gulp sass",
+    "watch-sass": "gulp"
   },
   "author": "Lighthouse Labs",
   "license": "ISC",
@@ -18,7 +20,6 @@
   },
   "devDependencies": {
     "gulp": "^4.0.2",
-    "gulp-nodemon": "^2.4.2",
     "gulp-sass": "^4.0.2"
   }
 }

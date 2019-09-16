@@ -1,6 +1,5 @@
 const gulp = require('gulp');
 const sass = require('gulp-sass');
-const nodemon = require('gulp-nodemon');
 
 gulp.task('sass', () => {
   return gulp.src(['./src/sass/*.scss'])
@@ -8,18 +7,7 @@ gulp.task('sass', () => {
     .pipe(gulp.dest('./public/styles'));
 });
 
-gulp.task('server', () => {
-
-});
-
-gulp.task('local', () => {
-  nodemon({
-    script: 'server/index.js',
-    ext: 'scss js',
-    tasks: ['sass']
-  });
-});
-
 gulp.task('default', () => {
-  return gulp.task('sass')();
+  console.log('Watching sass files for changes...');
+  gulp.watch(['**/*.scss'], {usePolling: true}, gulp.parallel('sass'));
 });
